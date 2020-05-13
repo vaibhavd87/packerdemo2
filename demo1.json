@@ -1,0 +1,24 @@
+{
+"builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "packer-svc.json",
+      "project_id": "vaibhavimages",
+      "source_image_family": "rhel-6",
+      "ssh_username": "packer",
+      "zone": "us-central1-a",
+      "machine_type": "f1-micro",
+      "disk_size": 20,
+      "image_name": "packer-demo-img-1",
+      "image_description": "Packer demo Image"
+
+    }
+  ],
+
+  "provisioners": [
+    {
+    "type": "shell",
+    "script": "provision.sh"
+    }
+    ]
+}
